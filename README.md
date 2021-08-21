@@ -2,6 +2,13 @@
 ## 栃木県のコロナ発生状況を分析
 栃木県のコロナ発生状況を分析するプログラムです.
 
+## 動作環境
+
+```
+Macbook air(2020) intel python3.8
+AWS Amazon Linax2 python3.7
+```
+
 ## データセット
 https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahasseijyoukyou.html
 
