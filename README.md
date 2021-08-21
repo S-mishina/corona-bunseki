@@ -53,3 +53,9 @@ except:
 with open('data/'+str(filename) ,mode='wb') as f: # wb でバイト型を書き込める
   f.write(urlData)
 ```
+
+## 実行コマンド
+
+```
+jupyter nbconvert --execute COVID.ipynb --to html
+```
