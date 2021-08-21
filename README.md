@@ -10,6 +10,11 @@ https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahass
 ```
 data/
 ```
+## アウトプットファイルの出力場所
+
+```
+output_data/
+```
 
 ## 注意点
 
