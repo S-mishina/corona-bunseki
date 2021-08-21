@@ -5,6 +5,12 @@
 ## データセット
 https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahasseijyoukyou.html
 
+## データセットのファイル場所
+
+```
+data/
+```
+
 ## 注意点
 
 このノートブック(アウトプット資料)は上記データセットに基づいて<br>
@@ -13,12 +19,6 @@ https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahass
 
 
 ## 要点
-### データフォーマットの加工
-
-```
-corona=corona[corona['番号']!='※居住地にかかわらず、感染症の予防及び感染症の患者に対する医療に関する法律に基づき、栃木県及び宇都宮市に届け出のあった患者について掲載しています。（他県や検疫所に届け出があった患者は、他県等で公表されます。）\n※患者・御家族の人権尊重・個人情報保護に御理解と御配慮をお願いします。\n※退院日等の「退院」には、感染症法上の入院勧告等の解除及び県外保健所への入院等の対応依頼を含みます。\n(＊) 陽性者との接触の有無、感染に関与すると考えられる行動歴等  ']
-```
-ここのデータを削除する.
 
 ### Excelファイルの取り扱い
 エクセルファイルを開いた時に日付データがシリアル値になってしまう問題を対処しました.
@@ -28,4 +28,28 @@ for i in range(len(corona)):
     if type(corona['判明日'][i]) is int:
         corona['判明日'][i]=pandas.to_datetime('1900/1/1') + pandas.to_timedelta(corona['判明日'][i] - 1, unit='days')
 ```
+## ファイルの自動収集
 
+本コードを実行すると最新データがdownloadできる.
+
+```
+dt_now=dt.datetime.now()
+file_day=dt_now - dt.timedelta(days=1)
+file_day=file_day.strftime("%Y%m%d")
+#ファイルのダウンロード
+url='https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/'+str(file_day)+'hasseijoukyou.xlsx'
+filename=str(file_day)+'hasseijoukyou.xlsx'
+try:
+  urlData = requests.get(url).content
+except:
+  file_day=dt_now - dt.timedelta(days=2)
+  file_day=file_day.strftime("%Y%m%d")
+  try:
+    urlData = requests.get(url).content
+  except:
+    print('ファイルが存在しません')
+  url='https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/'+str(file_day)+'hasseijoukyou.xlsx'
+  filename=str(file_day)+'hasseijoukyou.xlsx'
+with open('data/'+str(filename) ,mode='wb') as f: # wb でバイト型を書き込める
+  f.write(urlData)
+```
