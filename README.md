@@ -33,7 +33,7 @@ output_data/
 ## 実行コマンド
 
 ```
-corona_bash.sh
+./corona_bash.sh
 ```
 
 ## 注意点
