@@ -30,6 +30,12 @@ output_data/
 3, bashファイルを実行
 ```
 
+## 実行コマンド
+
+```
+corona_bash.sh
+```
+
 ## 注意点
 
 このノートブック(アウトプット資料)は上記データセットに基づいて<br>
@@ -140,8 +146,3 @@ with open('data/'+str(filename) ,mode='wb') as f: # wb でバイト型を書き�
   f.write(urlData)
 ```
 
-## 実行コマンド
-
-```
-jupyter nbconvert --execute COVID.ipynb --to html
-```
