@@ -1,0 +1,7 @@
+#鍵ファイルはプッシュを行わない
+*.pem
+*/*.pem
+#DS_storeのプッシュは行わない
+.DS_Store
+#.vscode
+.vscode
