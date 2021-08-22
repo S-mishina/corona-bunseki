@@ -8,6 +8,8 @@
 Macbook air(2020) intel python3.8
 AWS Amazon Linax2 python3.7
 ```
+## アーキテクチャー図
+![スクリーンショット 2021-08-22 20.55.43.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/567360/ad139587-4cd8-7e60-9080-e64c186f4222.png)
 
 ## データセット
 https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahasseijyoukyou.html
@@ -22,7 +24,7 @@ data/
 ```
 output_data/
 ```
-## 動作手順
+## 動作手順(手動の場合)
 
 ```
 1, みなさんが使っている環境（本プログラムはAWSを想定）にgit clone
