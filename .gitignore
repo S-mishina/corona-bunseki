@@ -3,7 +3,6 @@
 */*.pem
 #DS_storeのプッシュは行わない
 .DS_Store
-/*/.DS_Store
-/*/*/.DS_Store
+data/.DS_Store
 #.vscode
 .vscode
