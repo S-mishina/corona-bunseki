@@ -17,9 +17,11 @@ file_day=file_day.strftime("%Y%m%d")
 #ファイルのダウンロード
 try:
   url='https://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/'+str(file_day)+'hasseijoukyou.xlsx'
+  print(url)
   urlData = requests.get(url).content
   filename=str(file_day)+'hasseijoukyou.xlsx'
   print('0')
+  print(urlData.decode())
   if urlData.decode().startswith('<?xml'):
     print('1')
     file_day=dt_now - dt.timedelta(days=2)
