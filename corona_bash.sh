@@ -9,4 +9,4 @@ echo $to_day
 #pipの更新
 pip3 install -r requirements.txt
 #python jupiter出力
-jupyter nbconvert --execute test.ipynb --output output/$to_day  --to html
+jupyter nbconvert --execute ../../home/ssm-user/corona-bunseki/test.ipynb --output output/$to_day  --to html
