@@ -10,3 +10,5 @@ echo $to_day
 pip3 install -r requirements.txt
 #python jupiter出力
 jupyter nbconvert --execute ../../home/ssm-user/corona-bunseki/test.ipynb --output output/$to_day  --to html
+#aws s3アップロード
+aws s3 cp ../../home/ssm-user/corona-bunseki/output s3://corona-out-put-log/ --recursive
