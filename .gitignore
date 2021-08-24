@@ -6,3 +6,5 @@
 data/.DS_Store
 #.vscode
 .vscode
+#csvファイルのプッシュを行わない
+data/*.csv
