@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #git pull
-git pull
+git -C ../../home/ssm-user/corona-bunseki/ pull
 
 #ファイル名をここで決める
 to_day=$(date +"%Y%m%d")
